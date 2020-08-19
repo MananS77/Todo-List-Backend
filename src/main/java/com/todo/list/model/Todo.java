@@ -2,6 +2,7 @@ package com.todo.list.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -34,7 +35,7 @@ public class Todo {
   private String todoName;
 
   @OneToMany(mappedBy = "taskTodo", cascade = CascadeType.ALL)
-  @JsonBackReference
+  @JsonManagedReference
   @Getter
   private Set<Task> taskSet = new HashSet<Task>();
 

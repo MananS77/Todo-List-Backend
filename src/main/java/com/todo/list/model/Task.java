@@ -35,7 +35,7 @@ public class Task {
   @ManyToOne
   @JoinColumn
   @Setter
-  @JsonManagedReference
+  @JsonBackReference
   private Todo taskTodo;
 
   @NonNull
